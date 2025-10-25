@@ -8,7 +8,6 @@ import CalendarView from './components/CalendarView';
 import YearlyAnalysis from './components/YearlyAnalysis';
 import CategoryManagement from './components/CategoryManagement';
 import { 
-  Home, 
   Calendar, 
   BarChart3, 
   Settings, 
@@ -28,7 +27,6 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewType>('add');
   const [showTransactionInput, setShowTransactionInput] = useState(true);
   const [editingTransaction, setEditingTransaction] = useState<Transaction | null>(null);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // 로컬 스토리지에서 데이터 로드
@@ -143,7 +141,6 @@ const App: React.FC = () => {
 
   // 날짜 클릭 처리
   const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
     setCurrentView('transactions');
   };
 
